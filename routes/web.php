@@ -18,9 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 })->name('/');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/admin', function () {
+    return view('admin.index');
+})->middleware(['auth', 'verified'])->name('admin');
 
 Route::get('/home', function () {
     return view('home');
@@ -68,6 +68,13 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::resource('certificate', AdminCertificateController::class);
     Route::resource('projects', AdminProjectController::class);
 });
+
+// Route::group(['middleware' => ['auth','AdminMiddleware:admin']], function () {
+//     Route::resource('contacts', ContactController::class);
+//     Route::resource('skills', SkillController::class);
+//     Route::resource('certificate', AdminCertificateController::class);
+//     Route::resource('projects', AdminProjectController::class);
+// });
 
 // Route untuk menampilkan form create
 // Route::get('/admin/project/create', [ProjectController::class, 'create'])->name('admin.project.create');

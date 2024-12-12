@@ -45,6 +45,7 @@
                     <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link"><span>Contact</span></a></li>
                     <li class="nav-item"><a href="{{ route('certi') }}" class="nav-link"><span>Certificate</span></a></li>
                 </ul>
+                <a href="{{ route('login') }}" class="btn btn-primary ml-4">Login</a>
             </div>
         </div>
     </nav>
